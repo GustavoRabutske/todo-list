@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Tarefas Profissional - Rabutske</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+
+    <form id="form-tarefa" autocomplete="off" aria-label="Adicionar nova tarefa">
+      <input
+        type="text"
+        id="entrada-tarefa"
+        placeholder="Digite uma nova tarefa..."
+        required
+        maxlength="100"
+        aria-describedby="descricao-ajuda"
+      />
+      <select id="prioridade-tarefa" aria-label="Prioridade da tarefa" title="Prioridade da tarefa">
+        <option value="media" selected>Média</option>
+        <option value="alta">Alta</option>
+        <option value="baixa">Baixa</option>
+      </select>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <div class="filtros" role="group" aria-label="Filtros de tarefas">
+      <button class="filtro ativo" data-filtro="todas" aria-pressed="true">Todas</button>
+      <button class="filtro" data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+      <button class="filtro" data-filtro="concluidas" aria-pressed="false">Concluídas</button>
+    </div>
+
+    <ul id="lista-tarefas" aria-live="polite" aria-label="Lista de tarefas"></ul>
+
+    <button id="btn-reset" aria-label="Resetar todas as tarefas">Resetar tudo</button>
+
+    <div class="aviso-localstorage" role="alert" aria-live="polite">
+      Todas as tarefas são salvas automaticamente no seu navegador (localStorage).
+    </div>
+  </div>
+
+  <footer>
+    Projeto de portfólio desenvolvido por Rabutske
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
