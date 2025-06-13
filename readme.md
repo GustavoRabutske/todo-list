@@ -1,6 +1,6 @@
 # Lista de Tarefas - Rabutske
 
-Projeto simples de lista de tarefas (To-Do List) com persistência no navegador usando `localStorage`.
+Projeto simples de lista de tarefas (To-Do List) com persistência no navegador usando `localStorage`. Teste no seguinte link: https://gustavorabutske.github.io/todo-list/
 
 ---
 
