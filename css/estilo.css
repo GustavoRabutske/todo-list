@@ -1,0 +1,148 @@
+/* Variáveis de Cor para Temas */
+:root[data-tema="claro"] {
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #212529;
+    --cor-borda: #dee2e6;
+    --cor-primaria: #0d6efd;
+    --cor-fundo-calendario: #ffffff;
+    --cor-dia-atual: #e0f7fa;
+    --cor-dia-selecionado: #0d6efd;
+    --cor-texto-selecionado: #ffffff;
+}
+
+:root[data-tema="escuro"] {
+    --cor-fundo: #212529;
+    --cor-texto: #f8f9fa;
+    --cor-borda: #495057;
+    --cor-primaria: #4dabf7;
+    --cor-fundo-calendario: #343a40;
+    --cor-dia-atual: #084d6e;
+    --cor-dia-selecionado: #4dabf7;
+    --cor-texto-selecionado: #212529;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calendario-container {
+    background-color: var(--cor-fundo-calendario);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+}
+
+.calendario-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.dia-semana, .dia {
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.dia-semana {
+    font-weight: bold;
+}
+.dia {
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    border: 2px solid transparent;
+    position: relative; /* Necessário para posicionar o contador */
+}
+
+.dia-passado {
+    opacity: 0.5;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.dia-passado:hover {
+    background-color: transparent; 
+}
+
+
+/* NOVO: Estilo para o contador de tarefas */
+.contador-tarefas {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-calendario);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.dia:hover {
+    background-color: var(--cor-dia-atual);
+}
+
+.dia-outro-mes {
+    color: #adb5bd;
+}
+
+.dia-atual {
+    border: 2px solid var(--cor-primaria);
+    font-weight: bold;
+}
+
+.dia.selecionado {
+    background-color: var(--cor-dia-selecionado);
+    color: var(--cor-texto-selecionado);
+    font-weight: bold;
+}
+
+.marcador-tarefa {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--cor-primaria);
+    border-radius: 50%;
+}
+
+/* Prioridades das Tarefas */
+.prioridade-alta { border-left: 5px solid #dc3545; }
+.prioridade-media { border-left: 5px solid #ffc107; }
+.prioridade-baixa { border-left: 5px solid #0dcaf0; }
+
+.tarefa-concluida {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
